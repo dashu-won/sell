@@ -3,19 +3,27 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import routes from './router/routers'
+import VueResource from 'vue-resource'
+import goods from './components/goods/goods'
+import ratings from './components/ratings/ratings'
+import seller from './components/seller/seller'
 
+import './common/stylus/index.styl'
+
+/* eslint-diable no-new */
 Vue.use(VueRouter)
+Vue.use(VueResource);
+let routes = [
+  {path: '/', name: 'index', component: App, children: [{path: '/goods', component: goods}, {path: '/ratings', component: ratings}, {path: '/seller', component: seller}]}
+];
 
 const router = new VueRouter({
+  linkActiveClass: 'active',
   routes
 })
-Vue.config.productionTip = false
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+let app = new Vue({
+  router
+}).$mount('#app')
+router.push('/goods')
+export default app;

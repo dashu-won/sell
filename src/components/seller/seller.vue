@@ -1,7 +1,5 @@
 <template>
-    <div class="header">
-        我是header
-    </div>
+    <div>I am seller</div>
 </template>
 
 <script>
@@ -9,4 +7,5 @@ export default {}
 </script>
 
 <style lang="stylus">
+
 </style>
