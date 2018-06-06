@@ -14,7 +14,16 @@ import './common/stylus/index.styl'
 Vue.use(VueRouter)
 Vue.use(VueResource);
 let routes = [
-  {path: '/', name: 'index', component: App, children: [{path: '/goods', component: goods}, {path: '/ratings', component: ratings}, {path: '/seller', component: seller}]}
+  {
+    path: '/',
+    name: 'index',
+    component: App,
+    children: [
+      {path: '/goods', component: goods},
+      {path: '/ratings', component: ratings},
+      {path: '/seller', component: seller}
+    ]
+  }
 ];
 
 const router = new VueRouter({
