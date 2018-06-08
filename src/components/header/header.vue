@@ -69,32 +69,32 @@
 <script type="text/ecmascript-6">
   import star from '../star/star';
 
-  export default {
-    props: {
-      seller: {
-        type: Object
-      }
-    },
-    data() {
-      return {
-        detailShow: false
-      };
-    },
-    methods: {
-      showDetail() {
-        this.detailShow = true;
-      },
-      hideDetail() {
-        this.detailShow = false;
-      }
-    },
-    created() {
-      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-    },
-    components: {
-      star
+export default {
+  props: {
+    seller: {
+      type: Object
     }
-  };
+  },
+  data() {
+    return {
+      detailShow: false
+    };
+  },
+  methods: {
+    showDetail() {
+      this.detailShow = true;
+    },
+    hideDetail() {
+      this.detailShow = false;
+    }
+  },
+  created() {
+    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+  },
+  components: {
+    star
+  }
+};
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
