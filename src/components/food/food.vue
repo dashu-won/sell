@@ -34,9 +34,9 @@
         <split></split>
         <div class="rating">
           <h1 class="title">商品评价</h1>
-          <!-- <ratingselect @select="selectRating" @toggle="toggleContent" :selectType="selectType"
+          <ratingselect @select="selectRating" @toggle="toggleContent" :selectType="selectType"
                         :onlyContent="onlyContent" :desc="desc"
-                        :ratings="food.ratings"></ratingselect> -->
+                        :ratings="food.ratings"></ratingselect>
           <div class="rating-wrapper">
             <ul v-show="food.ratings && food.ratings.length">
               <li v-show="needShow(rating.rateType,rating.text)" v-for="(rating,index) in food.ratings" :key="index"
@@ -64,7 +64,7 @@
   import Vue from 'vue';
   //import {formatDate} from 'common/js/date';
   import cartcontrol from '../cartcontrol/cartcontrol';
-  //import ratingselect from 'components/ratingselect/ratingselect';
+  import ratingselect from '../ratingselect/ratingselect';
   import split from '../split/split';
   const ALL = 2;
   export default {
@@ -144,7 +144,7 @@
     },
     components: {
       cartcontrol,
-      //ratingselect,
+      ratingselect,
       split
     }
   };
