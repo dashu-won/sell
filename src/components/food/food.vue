@@ -45,7 +45,7 @@
                   <span class="name">{{rating.username}}</span>
                   <img class="avatar" width="12" height="12" :src="rating.avatar">
                 </div>
-                <!-- <div class="time">{{rating.rateTime | formatDate}}</div> -->
+                <div class="time">{{rating.rateTime | formatDate}}</div>
                 <p class="text">
                   <span :class="{'icon-thumb_up':rating.rateType===0,'icon-thumb_down':rating.rateType===1}"></span>{{rating.text}}
                 </p>
@@ -62,7 +62,7 @@
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
   import Vue from 'vue';
-  //import {formatDate} from 'common/js/date';
+  import {formatDate} from '../../common/js/date';
   import cartcontrol from '../cartcontrol/cartcontrol';
   import ratingselect from '../ratingselect/ratingselect';
   import split from '../split/split';
@@ -137,10 +137,10 @@
       }
     },
     filters: {
-     // formatDate(time) {
-      //  let date = new Date(time);
-      //  return formatDate(date, 'yyyy-MM-dd hh:mm');
-     // }
+     formatDate(time) {
+      let date = new Date(time);
+        return formatDate(date, 'yyyy-MM-dd hh:mm');
+      }
     },
     components: {
       cartcontrol,
