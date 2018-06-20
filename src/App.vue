@@ -55,4 +55,6 @@ export default {
       .tab-item
         flex: 1
         text-align: center
+        a
+          text-decoration: none
 </style>
