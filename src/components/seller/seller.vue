@@ -2,9 +2,9 @@
   <div class="seller" ref="seller">
     <div class="seller-content">
       <div class="overview">
-        <h1 class="title"></h1>
+        <h1 class="title">{{seller.name}}</h1>
         <div class="desc border-1px">
-          <star :size="36"></star>
+          <star></star>
           <span class="text"></span>
           <span class="text">月售2单</span>
         </div>
@@ -69,7 +69,24 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    seller: {
+      type: Object
+    }
+  },
+  watch: {
+    'seller'() {
+      this.$nextTick(()=>{
+        this._initScroll();
+        this._initPics();
+      })
+    }
+  },
+  components: {
+    
+  }
+}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
