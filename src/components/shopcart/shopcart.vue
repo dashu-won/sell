@@ -58,12 +58,17 @@
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
   import cartcontrol from '../cartcontrol/cartcontrol';
-  export default {
-     props: {
+   export default {
+    props: {
       selectFoods: {
         type: Array,
         default() {
-          return [{price: 20, count: 2}];
+          return [
+            {
+              price: 10,
+              count: 1
+            }
+          ];
         }
       },
       deliveryPrice: {
@@ -77,23 +82,7 @@
     },
     data() {
       return {
-        balls: [
-          {
-            show: false
-          },
-          {
-            show: false
-          },
-          {
-            show: false
-          },
-          {
-            show: false
-          },
-          {
-            show: false
-          }
-        ],
+        balls: [{show: false},{show: false},{show: false},{show: false},{show: false}],
         dropBalls: [],
         fold: true
       };
@@ -103,7 +92,7 @@
         let total = 0;
         this.selectFoods.forEach((food) => {
           total += food.price * food.count;
-        })
+        });
         return total;
       },
       totalCount() {

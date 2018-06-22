@@ -39,8 +39,8 @@
           </li>
         </ul>
       </div>
-      <shopcart ref="shopcart" select-foods.sync="selectFoods" delivery-price.sync="seller.deliveryPrice"
-                min-price.sync="seller.minPrice"></shopcart>
+      <shopcart ref="shopcart" :selectFoods="selectFoods" :deliveryPrice="seller.deliveryPrice"
+                :minPrice="seller.minPrice"></shopcart>
     </div>
     <food @add="addFood" :food="selectedFood" ref="food"></food>
   </div>
@@ -171,7 +171,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixin.styl"
-  .goods
+   .goods
     display: flex
     position: absolute
     top: 174px
