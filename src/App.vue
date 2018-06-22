@@ -64,9 +64,10 @@ export default {
       border-1px(rgba(7, 17, 27, 0.1))
       .tab-item
         flex: 1
-        text-align: center
+        text-align: center        
         & > a
           display: block
+          text-decoration: none
           font-size: 14px
           color: rgb(77, 85, 93)
           &.active
